@@ -9,6 +9,7 @@ struct Urun { // ilk ataması yapılmadan yaratılır genellikle-- optional olma
     
     
 }
+// oop 
 
 
 class Araba {

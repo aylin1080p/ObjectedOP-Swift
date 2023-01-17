@@ -1,5 +1,5 @@
 import UIKit
-
+/*
 // class and structur
 
 struct Urun { // ilk ataması yapılmadan yaratılır genellikle-- optional olmalı
@@ -59,3 +59,48 @@ if let renkTemp = limuzin.renk {
 
 print("limuzin kapasitesi : \(limuzin.kapasite!)")
 
+*/
+// struct ve class mantığı
+
+// car analoji
+
+class Araba{
+    var renk : String?
+    var hiz : Int?
+    var calisiyormu : Bool?
+    
+    // add some functions
+    func calistir(){ // parametre almıyor
+        calisiyormu = true
+    }
+    
+    func durdur () {
+        calisiyormu = false
+        hiz = 0
+    }
+    
+    func hizlan(kackm:Int){ // dişardanhız alacak
+        hiz! = hiz! + kackm
+    }
+    func yavaslat (kackm:Int) {
+        hiz! = hiz! - kackm // hiz -=kackm
+        
+    }
+    
+    func bilgiAl(){
+        print("renk : \(renk!)")
+        print("hiz : \(hiz!)")
+        print("çalışıyor mu : \(calisiyormu!)")
+        
+        
+    }
+    
+}
+    var bmw = Araba() // create an object
+    bmw.hiz = 180
+    bmw.renk = "kirmizi"
+    bmw.calistir()
+bmw.bilgiAl()
+    
+    
+    

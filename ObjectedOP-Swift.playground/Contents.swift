@@ -1,5 +1,5 @@
 import UIKit
-/*
+
 // class and structur
 
 struct Urun { // ilk ataması yapılmadan yaratılır genellikle-- optional olmalı
@@ -59,7 +59,7 @@ if let renkTemp = limuzin.renk {
 
 print("limuzin kapasitesi : \(limuzin.kapasite!)")
 
-*/
+
 // struct ve class mantığı
 
 // car analoji
@@ -83,8 +83,11 @@ class Araba{
         hiz! = hiz! + kackm
     }
     func yavaslat (kackm:Int) {
-        hiz! = hiz! - kackm // hiz -=kackm
         
+        if (hiz != 0)
+        {
+            hiz! = hiz! - kackm // hiz -=kackm
+        }
     }
     
     func bilgiAl(){
@@ -100,7 +103,81 @@ class Araba{
     bmw.hiz = 180
     bmw.renk = "kirmizi"
     bmw.calistir()
+bmw.bilgiAl() // tüm detayları yazdırmak için yazılmış fonksiyonu çağırıyoruz
+    
+    
+
+// yavşlat ama önce çalışıyor mu kontrolü yapman lazım eğer çalışıyorsa hiz arrtır ya dan hiz sıfır değilse
+
+
+
+
+bmw.hiz = 10
+bmw.yavaslat(kackm: 30)
 bmw.bilgiAl()
+
+
+
+
+// bus anoloji
+class Bus {
+    var nereden: String?
+    var nereye:String?
+    var mevcutYolcu:Int?
+    var kapasite:Int?
     
     
+    func yolcuAl(yolcu:Int){
+        mevcutYolcu! += yolcu
+    }
     
+    func yolcuIndir(yolcu:Int){
+        mevcutYolcu! -= yolcu
+    }
+    
+    func takeInfo(){
+        print("kapasite: \(kapasite!)")
+        print("nereden: \(nereden!)")
+        print("nereye: \(nereye!)")
+        print("mevcut yolcu: \(mevcutYolcu!)")
+    }
+    
+}
+
+var luksArtvin = Bus()
+luksArtvin.kapasite = 100
+luksArtvin.nereye = "Eskişehir"
+luksArtvin.nereden = "Den Haag"
+luksArtvin.mevcutYolcu = 4
+
+luksArtvin.yolcuAl(yolcu: 2)
+luksArtvin.takeInfo()
+
+
+
+// closure -- method olmasına rağmen değişken gibi çağırılır ve yazılır ama içerde func işlemleri yapabilir
+
+class Math{
+    var x = 10
+    var y = 20
+    
+    var topla:Int {
+        get{
+            return x + y
+        }
+        
+        set(x2){
+            self.x = x2
+        }
+        
+    }
+    
+}
+ var hesap = Math()
+print(hesap.topla)
+hesap.topla = 500
+print(hesap.topla)
+
+// set ve get methodlarını içerir.
+
+
